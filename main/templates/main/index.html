@@ -1,0 +1,13 @@
+{% extends 'main/pattern.html' %}
+
+
+{% block title %}Main page{% endblock %} 
+
+{% block content %}
+    <div class="features">
+        <h1>Main page</h1>
+
+        <a href="{% url 'work_home' %}"><li><button class="btn btn-info"><i class="far fa-edit">Go to the todo</i></li></a>
+
+    </div>
+{% endblock %}

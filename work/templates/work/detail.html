@@ -1,0 +1,15 @@
+{% extends 'main/pattern.html' %}
+
+
+{% block title %}To-do list{% endblock %} 
+
+{% block content %}
+    <div class="features">
+        <h3>{{ task.tittle }}</h3>
+        <h2>{{ task.full_task }}</h2>
+        <p>{{ task.date }}</p>
+
+    <a href="{% url 'work_home' %}"><li><button class="btn btn-info"><i class="far fa-edit">Main</i></li></a>
+
+    </div>
+{% endblock %}

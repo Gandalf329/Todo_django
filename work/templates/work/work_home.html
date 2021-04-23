@@ -1,0 +1,26 @@
+{% extends 'main/pattern.html' %}
+
+
+{% block title %}To-do list{% endblock %} 
+
+{% block content %}
+    <div class="features">
+        <h1>To-do list</h1>
+        <h1><a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-pencil-alt"></i>Create task</li></a></h1>
+
+        {% if tasks %}
+            {% for item in tasks %}
+                
+                <div class="alert alert-warning">
+                    <a href="{% url 'task-delete' item.id %}"><li><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></li></a>
+                    <h3><a href="{% url 'task-detail' item.id %}">{{ item.tittle }}</a></h3>
+                        
+                    <p>{{ item.date }}</p>
+                    <a href="{% url 'task-update' item.id %}"><li><button class="btn btn-info"><i class="far fa-edit"></i></li></a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No tasks</p>
+        {% endif %}
+
+{% endblock %}

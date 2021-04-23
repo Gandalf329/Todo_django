@@ -1,0 +1,19 @@
+{% extends 'main/pattern.html' %}
+
+
+{% block title %}Create task{% endblock %} 
+
+{% block content %}
+    <div class="features">
+        <h3>Create task</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.tittle }}</br>
+            {{ form.full_task }}</br>
+            {{ form.date }}</br>
+
+            <button class="btn btn-sucess" type="submit">Add task</button>
+        </form>
+        <span>{{ error }}</span>
+    </div>
+{% endblock %}
